@@ -1,0 +1,20 @@
+{% for message in get_flashed_messages() %}
+    <p style="color: red;">{{ message}}</p>
+{% endfor %}
+
+<form method="POST">
+    First name: <input id="first_name" name="first_name" type="text"><br/>
+    Last name: <input id="last_name" name="last_name" type="text"><br/>
+    Email: <input id="email" name="email" type="text"><br/>
+    Message: <textarea id="message" name="message"></textarea><br/>
+    Duration: <input id="duration" name="duration" placeholder="Enter duration as a number - for example: 3" type="text"><br/>
+
+    <select name="duration_unit">
+        <option value="" diabled selected>Choose the duration</option>
+        <option value="minutes">minutes</option>
+        <option value="hours">hours</option>
+        <option value="days">days</option>
+    </select>
+
+    <button type="submit" name="action">Submit</button>
+</form>
